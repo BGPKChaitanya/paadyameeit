@@ -1,0 +1,47 @@
+.navBar {
+  /* background-color: #c3d5e0; */
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  /* position: relative; */
+}
+.innerNavBar {
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 5px solid red;
+}
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border: 5px solid red; */
+  width: 100%;
+}
+.companylogo {
+  height: 35px;
+  width: 35px;
+}
+.title {
+  font-family: "Roboto";
+  font-size: 20px;
+  margin-left: 10px;
+}
+.nav-item {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-family: "Roboto";
+}
+.navItems {
+  /* border: 5px solid green; */
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav-item:hover {
+  /* color: red; */
+  cursor: pointer;
+  text-shadow: 2px 2px 0px yellow;
+  /* background-color: yellow; */
+}
