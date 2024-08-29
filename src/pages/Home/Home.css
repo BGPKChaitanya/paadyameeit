@@ -1,0 +1,60 @@
+.homeContainer {
+  height: 100vh;
+  background-image: url("/public/bulb.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.homeInnerContainer {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(1, 31, 17, 0.6);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "roboto";
+}
+
+.hometitle {
+  /* font-size: 65px; */
+  text-align: center;
+  font-weight: bold !important;
+  font-family: "roboto";
+  /* border: 5px solid red */
+  margin: 0;
+  font-size: 50px !important;
+}
+.htitle2 {
+  color: #27dfe6;
+}
+.htitle1 {
+  color: #fcba03;
+}
+.requestButton {
+  border-radius: 10px !important;
+  width: 200px !important;
+  height: 50px !important;
+  margin-top: 50px !important;
+  color: white !important;
+  font-weight: bold !important;
+  background-color: #3b71ca !important;
+}
+.titledes {
+  font-size: 20px !important;
+  text-align: center;
+}
+
+@media screen and (width < 768px) {
+  .hometitle {
+    font-size: 35px !important;
+  }
+  .titledes {
+    font-size: 16px !important;
+    text-align: center;
+  }
+}

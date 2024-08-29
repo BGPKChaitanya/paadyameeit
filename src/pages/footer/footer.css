@@ -1,5 +1,22 @@
 .headline {
   font-weight: bold;
   background-color: black;
-  height: 150vh;
+  /* height: 300px; */
+  z-index: 1100;
+  text-align: center;
+  padding: 25px;
+}
+.footer {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 100px;
+}
+.footerContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.fc1 {
 }

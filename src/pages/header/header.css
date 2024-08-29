@@ -45,3 +45,14 @@
   text-shadow: 2px 2px 0px yellow;
   /* background-color: yellow; */
 }
+
+.appBar {
+  background: transparent;
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out;
+  position: fixed;
+}
+
+.appBar.active {
+  background-color: #0a6769;
+}

@@ -1,9 +1,10 @@
 import * as React from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
+// import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -14,13 +15,26 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import "./header.css";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Services", "Careers", "Contact Us"];
+const navItems = ["Home", "About", "Services", "Career", "Contact"];
 
 function Header(props) {
-  const { window } = props;
+  // const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [navBar, setnavBar] = useState(false);
+  const changeBackground = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 80) {
+      setnavBar(true);
+    } else {
+      setnavBar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -28,33 +42,16 @@ function Header(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Box
-          component="img"
-          src="https://ik.imagekit.io/p0ykayweu/download__1_-removebg-preview.png?updatedAt=1724746158404"
-          sx={{ height: "35px", width: "35px" }}
-        ></Box>
-        <Typography
-          variant="h6"
-          sx={{ my: 2, marginLeft: "10px", fontWeight: "bold" }}
-        >
-          PAADYAMEE
-        </Typography>
-      </Box>
-
-      <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link
+                to={item == "Home" ? "/" : `/${item}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <ListItemText primary={item} sx={{ textTransform: "none" }} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -62,23 +59,20 @@ function Header(props) {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar
+        component="nav"
+        // className={navBar ? "appBar active" : "appBar"}
+        sx={{
+          padding: { sx: "none", lg: "25px 100px 25px 100px" },
+          backgroundColor: navBar ? "#0a6769" : "transparent",
+          position: "fixed",
+          top: 0,
+        }}
+      >
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Box
             sx={{
               display: "flex",
@@ -88,37 +82,64 @@ function Header(props) {
               flexGrow: 1,
             }}
           >
-            <Box
-              component="img"
-              src="https://ik.imagekit.io/p0ykayweu/download__1_-removebg-preview.png?updatedAt=1724746158404"
-              sx={{ height: "35px", width: "35px" }}
-            ></Box>
-            <Typography
-              variant="h6"
-              sx={{ my: 2, marginLeft: "10px", fontWeight: "bold" }}
-            >
-              PAADYAMEE
-            </Typography>
+            <Link to="/">
+              <Box
+                component="img"
+                src="https://ik.imagekit.io/p0ykayweu/download__1_-removebg-preview.png?updatedAt=1724746158404"
+                sx={{
+                  height: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
+                  width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
+                }}
+              ></Box>
+            </Link>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  my: 2,
+                  marginLeft: "10px",
+                  fontWeight: "bold",
+                  fontSize: { xs: "24px", sm: "24px", md: "24px", lg: "30px" },
+                  textDecoration: "none",
+                }}
+              >
+                PAADYAMEE
+              </Typography>
+            </Link>
           </Box>
-          {/* <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
-            PAADYAMEE
-          </Typography> */}
+            <MenuIcon />
+          </IconButton>
+
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
+              <Link to={item == "Home" ? "/" : `/${item}`}>
+                <Button
+                  key={item}
+                  sx={{
+                    color: "#fff",
+                    textTransform: "none",
+                    fontSize: "23px",
+                    width: { md: "100px", lg: "150px" },
+                  }}
+                >
+                  {item}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
       <nav>
         <Drawer
-          container={container}
+          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -136,7 +157,7 @@ function Header(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      {/* <Box component="main" sx={{ pt: 10 }}>
         <Toolbar />
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
@@ -175,17 +196,12 @@ function Header(props) {
           facilis libero dolorem dolores sunt inventore perferendis, aut
           sapiente modi nesciunt.
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
+// }
 
-Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+Header.propTypes = {};
 
 export default Header;
