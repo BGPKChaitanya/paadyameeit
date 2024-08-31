@@ -1,0 +1,123 @@
+.desCon {
+  /* height: 100vh; */
+}
+.desTitle {
+  text-align: center;
+  font-weight: bold !important;
+  font-family: "Roboto" !important;
+  font-size: 35px !important;
+}
+.desTitle1 {
+  text-align: center;
+  font-family: "Roboto" !important;
+  font-size: 35px !important;
+}
+.destext {
+  display: grid;
+  grid-template-rows: 300px 300px 300px 300px 300px;
+  grid-template-columns: 600px 600px;
+  gap: 30px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+.destextCon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.txt1 {
+  font-weight: bold !important;
+  font-size: 24px !important;
+  margin-bottom: 10px;
+}
+.txt12 {
+  text-align: right;
+}
+.txt2 {
+  font-size: 18px !important;
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .destext {
+    display: grid;
+    grid-template-rows: 250px 250px 250px 250px 250px;
+    grid-template-columns: 350px 350px;
+    gap: 15px;
+    justify-items: center;
+    margin-bottom: 30px;
+    border: "5px solid red";
+  }
+  .desTitle {
+    text-align: center;
+    font-weight: bold !important;
+    font-family: "Roboto" !important;
+    font-size: 30px !important;
+  }
+  .desTitle1 {
+    text-align: center;
+    font-family: "Roboto" !important;
+    font-size: 30px !important;
+  }
+  .txt1 {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    margin-bottom: 10px;
+  }
+  .txt2 {
+    font-size: 15px !important;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+  .destext {
+    display: grid;
+    grid-template-rows: 300px 300px 300px 300px 300px;
+    grid-template-columns: 450px 450px;
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 30px;
+    border: "5px solid red";
+  }
+  .txt1 {
+    font-weight: bold !important;
+    font-size: 24px !important;
+    margin-bottom: 10px;
+  }
+  .txt2 {
+    font-size: 15px !important;
+  }
+}
+@media screen and (width < 768px) {
+  .destext {
+    display: grid;
+    grid-template-rows: 300px 275px 300px 275px 300px 275px 300px 275px 300px 275px;
+    grid-template-columns: 350px;
+    gap: 10px;
+    justify-items: center;
+    margin-bottom: 10px;
+    border: "5px solid red";
+  }
+  .txt1 {
+    font-weight: bold !important;
+    font-size: 24px !important;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .txt2 {
+    font-size: 15px !important;
+    text-align: center;
+  }
+  .txt12 {
+    text-align: center;
+  }
+  .desTitle {
+    text-align: center;
+    font-weight: bold !important;
+    font-family: "Roboto" !important;
+    font-size: 30px !important;
+  }
+  .desTitle1 {
+    text-align: center;
+    font-family: "Roboto" !important;
+    font-size: 30px !important;
+  }
+}

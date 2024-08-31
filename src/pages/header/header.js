@@ -26,7 +26,6 @@ function Header(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [navBar, setnavBar] = useState(false);
   const changeBackground = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 80) {
       setnavBar(true);
     } else {
@@ -50,7 +49,12 @@ function Header(props) {
                 to={item == "Home" ? "/" : `/${item}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <ListItemText primary={item} sx={{ textTransform: "none" }} />
+                <ListItemText
+                  primary={item}
+                  sx={{
+                    textTransform: "none",
+                  }}
+                />
               </Link>
             </ListItemButton>
           </ListItem>
