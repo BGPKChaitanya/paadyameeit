@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import PropTypes from "prop-types";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,6 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import logo from "../../ProjectImages/logo.png";
 import "./header.css";
 import { Link } from "react-router-dom";
 
@@ -46,7 +47,7 @@ function Header(props) {
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
               <Link
-                to={item == "Home" ? "/" : `/${item}`}
+                to={item === "Home" ? "/" : `/${item}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <ListItemText
@@ -89,7 +90,7 @@ function Header(props) {
             <Link to="/">
               <Box
                 component="img"
-                src="https://ik.imagekit.io/p0ykayweu/download__1_-removebg-preview.png?updatedAt=1724746158404"
+                src={logo}
                 sx={{
                   height: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
                   width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
@@ -124,7 +125,7 @@ function Header(props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Link to={item == "Home" ? "/" : `/${item}`}>
+              <Link to={item === "Home" ? "/" : `/${item}`}>
                 <Button
                   key={item}
                   sx={{

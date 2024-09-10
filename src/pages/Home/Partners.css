@@ -1,0 +1,57 @@
+.Partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.parTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.parlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+.partItem {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .partItem {
+    width: 150px;
+    height: 100px;
+  }
+  .parlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+}
+@media screen and (width < 768px) {
+  .partItem {
+    width: 150px;
+    height: 100px;
+    /* border: 5px solid red; */
+  }
+  .parlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+    margin-left: ;
+  }
+}

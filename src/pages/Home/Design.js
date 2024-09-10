@@ -1,6 +1,6 @@
 import React from "react";
 import "./Design.css";
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import understand from "../../ProjectImages/understand.png";
 import design from "../../ProjectImages/design.png";
 import code from "../../ProjectImages/code.png";
@@ -14,10 +14,21 @@ const Design = () => {
       <Box
         sx={{
           padding: { xs: "none", sm: "none", lg: "50px 135px 25px 135px" },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <Typography className="desTitle1">Way of Building</Typography>
         <Typography className="desTitle">Great Software</Typography>
+        <Divider
+          sx={{
+            width: "100px",
+            border: "2px solid #e68d39",
+            borderRadius: "20px",
+            margin: "10px",
+          }}
+        />
       </Box>
       <Box className="destextCon">
         <Box className="destext">

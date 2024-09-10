@@ -8,8 +8,8 @@ const About = () => {
   return (
     <Box className="con">
       <Box className="con2">
+        <Typography className="aboutus">About Us</Typography>
         <Box className="abouts">
-          <Typography className="aboutus">About Us</Typography>
           <Box className="abtdes">
             <Box className="abtdes1">
               <Box

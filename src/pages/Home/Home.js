@@ -1,8 +1,9 @@
-import Design from "./Design";
 import "./Home.css";
 import { Typewriter } from "react-simple-typewriter";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Typography } from "@mui/material";
+import Partners from "./Partners";
+import Design from "./Design";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ const Home = () => {
           </Button>
         </Box>
       </Box>
+      <Partners />
       <Design />
     </Box>
   );
