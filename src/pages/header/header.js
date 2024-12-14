@@ -4,7 +4,7 @@ import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-// import Divider from "@mui/material/Divider";
+
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -13,19 +13,54 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+
 import Button from "@mui/material/Button";
 import logo from "../../ProjectImages/logo.png";
 import "./header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
+import Fade from "@mui/material/Fade";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Services", "Career", "Contact"];
+const navItems = ["Home", "About", "Services", "Projects", "Career", "Contact"];
 
 function Header(props) {
   // const { window } = props;
+  const navigate = useNavigate();
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [navBar, setnavBar] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorsEl, setAnchorsEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const opens = Boolean(anchorsEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const navigateTo = (item) => {
+    navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`, true);
+    setAnchorEl(null);
+    setAnchorsEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handlesClick = (event) => {
+    setAnchorsEl(event.currentTarget);
+  };
+  const handlesClose = () => {
+    setAnchorsEl(null);
+  };
   const changeBackground = () => {
     if (window.scrollY >= 80) {
       setnavBar(true);
@@ -40,26 +75,88 @@ function Header(props) {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const drawernavigateTo = (item) => {
+    navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`, true);
+    handleDrawerToggle();
+  };
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box sx={{ textAlign: "center" }}>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <Link
-                to={item === "Home" ? "/" : `/${item}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ListItemText
-                  primary={item}
-                  sx={{
-                    textTransform: "none",
-                  }}
-                />
-              </Link>
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {navItems.map((item) =>
+          item === "About" || item === "Services" ? (
+            item === "About" ? (
+              <Accordion elevation={0} sx={{ "&:before": { height: "0px" } }}>
+                <AccordionSummary
+                  expandIcon={<KeyboardArrowDownIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <Typography>{item}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    onClick={() => drawernavigateTo("About")}
+                    sx={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    About Us
+                  </Typography>
+                </AccordionDetails>
+                <AccordionDetails>
+                  <Typography
+                    onClick={() => drawernavigateTo("history")}
+                    sx={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    History
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ) : (
+              <Accordion elevation={0} sx={{ "&:before": { height: "0px" } }}>
+                <AccordionSummary
+                  expandIcon={<KeyboardArrowDownIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <Typography>{item}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    onClick={() => drawernavigateTo("Services")}
+                    sx={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    UID Services
+                  </Typography>
+                </AccordionDetails>
+                <AccordionDetails>
+                  <Typography
+                    onClick={() => drawernavigateTo("Services")}
+                    sx={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    Software Development
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            )
+          ) : (
+            <ListItem key={item} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <Link
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  onClick={handleDrawerToggle}
+                >
+                  <ListItemText
+                    primary={item}
+                    sx={{
+                      textTransform: "none",
+                    }}
+                  />
+                </Link>
+              </ListItemButton>
+            </ListItem>
+          )
+        )}
       </List>
     </Box>
   );
@@ -71,8 +168,8 @@ function Header(props) {
         component="nav"
         // className={navBar ? "appBar active" : "appBar"}
         sx={{
-          padding: { sx: "none", lg: "25px 100px 25px 100px" },
-          backgroundColor: navBar ? "#0a6769" : "transparent",
+          padding: { sx: "none", lg: "15px 100px 15px 100px" },
+          backgroundColor: navBar ? "#058037" : "#058037",
           position: "fixed",
           top: 0,
         }}
@@ -92,12 +189,13 @@ function Header(props) {
                 component="img"
                 src={logo}
                 sx={{
-                  height: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
-                  width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
+                  height: { xs: "45px", sm: "45px", md: "45px", lg: "60px" },
+                  // border: "1px solid red",
+                  // width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
                 }}
               ></Box>
             </Link>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <Typography
                 variant="h4"
                 sx={{
@@ -110,7 +208,7 @@ function Header(props) {
               >
                 PAADYAMEE
               </Typography>
-            </Link>
+            </Link> */}
           </Box>
 
           <IconButton
@@ -124,21 +222,103 @@ function Header(props) {
           </IconButton>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Link to={item === "Home" ? "/" : `/${item}`}>
-                <Button
-                  key={item}
-                  sx={{
-                    color: "#fff",
-                    textTransform: "none",
-                    fontSize: "23px",
-                    width: { md: "100px", lg: "150px" },
-                  }}
-                >
-                  {item}
-                </Button>
-              </Link>
-            ))}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              {navItems.map((item) => (
+                // <Link
+                //   key={item}
+                //   to={
+                //     item === "Home"
+                //       ? "/"
+                //       : item === "About" || item === "Services"
+                //       ? ""
+                //       : `/${item.toLowerCase()}`
+                //   }
+                // >
+                <Box>
+                  <Button
+                    key={item}
+                    className="navButton"
+                    sx={{
+                      color: "#FFFFFF",
+                      textTransform: "none",
+                      fontSize: "23px",
+                      width: { md: "100px", lg: "150px" },
+                    }}
+                    onClick={
+                      (item === "About" || item === "Services") &&
+                      item === "About"
+                        ? handleClick
+                        : item === "Services"
+                        ? handlesClick
+                        : () => navigateTo(item)
+                    }
+                  >
+                    {item}
+                    {item === "About" || item === "Services" ? (
+                      <ArrowDropDownIcon />
+                    ) : (
+                      ""
+                    )}
+                  </Button>
+                  {item === "About" ? (
+                    <Menu
+                      id="fade-menu"
+                      MenuListProps={{
+                        "aria-labelledby": "fade-button",
+                      }}
+                      anchorEl={anchorEl}
+                      open={open}
+                      onClose={handleClose}
+                      TransitionComponent={Fade}
+                    >
+                      <MenuItem
+                        onClick={() => navigateTo("about")}
+                        sx={{ width: "150px" }}
+                      >
+                        About Us
+                      </MenuItem>
+                      <MenuItem
+                        onClick={() => navigateTo("history")}
+                        sx={{ width: "150px" }}
+                      >
+                        History
+                      </MenuItem>
+                    </Menu>
+                  ) : (
+                    ""
+                  )}
+
+                  {item === "Services" ? (
+                    <Menu
+                      id="fades-menu"
+                      MenuListProps={{
+                        "aria-labelledby": "fade-button",
+                      }}
+                      anchorEl={anchorsEl}
+                      open={opens}
+                      onClose={handlesClose}
+                      TransitionComponent={Fade}
+                    >
+                      <MenuItem onClick={() => navigateTo("services")}>
+                        UID Services
+                      </MenuItem>
+                      <MenuItem onClick={() => navigateTo("services")}>
+                        Software Development
+                      </MenuItem>
+                    </Menu>
+                  ) : (
+                    ""
+                  )}
+                </Box>
+                // </Link>
+              ))}
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
@@ -162,46 +342,6 @@ function Header(props) {
           {drawer}
         </Drawer>
       </nav>
-      {/* <Box component="main" sx={{ pt: 10 }}>
-        <Toolbar />
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-          unde fugit veniam eius, perspiciatis sunt? Corporis qui ducimus
-          quibusdam, aliquam dolore excepturi quae. Distinctio enim at eligendi
-          perferendis in cum quibusdam sed quae, accusantium et aperiam? Quod
-          itaque exercitationem, at ab sequi qui modi delectus quia corrupti
-          alias distinctio nostrum. Minima ex dolor modi inventore sapiente
-          necessitatibus aliquam fuga et. Sed numquam quibusdam at officia
-          sapiente porro maxime corrupti perspiciatis asperiores, exercitationem
-          eius nostrum consequuntur iure aliquam itaque, assumenda et! Quibusdam
-          temporibus beatae doloremque voluptatum doloribus soluta accusamus
-          porro reprehenderit eos inventore facere, fugit, molestiae ab officiis
-          illo voluptates recusandae. Vel dolor nobis eius, ratione atque
-          soluta, aliquam fugit qui iste architecto perspiciatis. Nobis,
-          voluptatem! Cumque, eligendi unde aliquid minus quis sit debitis
-          obcaecati error, delectus quo eius exercitationem tempore. Delectus
-          sapiente, provident corporis dolorum quibusdam aut beatae repellendus
-          est labore quisquam praesentium repudiandae non vel laboriosam quo ab
-          perferendis velit ipsa deleniti modi! Ipsam, illo quod. Nesciunt
-          commodi nihil corrupti cum non fugiat praesentium doloremque
-          architecto laborum aliquid. Quae, maxime recusandae? Eveniet dolore
-          molestiae dicta blanditiis est expedita eius debitis cupiditate porro
-          sed aspernatur quidem, repellat nihil quasi praesentium quia eos,
-          quibusdam provident. Incidunt tempore vel placeat voluptate iure
-          labore, repellendus beatae quia unde est aliquid dolor molestias
-          libero. Reiciendis similique exercitationem consequatur, nobis placeat
-          illo laudantium! Enim perferendis nulla soluta magni error, provident
-          repellat similique cupiditate ipsam, et tempore cumque quod! Qui, iure
-          suscipit tempora unde rerum autem saepe nisi vel cupiditate iusto.
-          Illum, corrupti? Fugiat quidem accusantium nulla. Aliquid inventore
-          commodi reprehenderit rerum reiciendis! Quidem alias repudiandae eaque
-          eveniet cumque nihil aliquam in expedita, impedit quas ipsum nesciunt
-          ipsa ullam consequuntur dignissimos numquam at nisi porro a, quaerat
-          rem repellendus. Voluptates perspiciatis, in pariatur impedit, nam
-          facilis libero dolorem dolores sunt inventore perferendis, aut
-          sapiente modi nesciunt.
-        </Typography>
-      </Box> */}
     </Box>
   );
 }

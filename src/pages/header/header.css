@@ -1,8 +1,13 @@
 .navBar {
   /* background-color: #c3d5e0; */
   box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  color: #04210c !important;
   /* position: relative; */
 }
+* {
+  font-family: "Rubik", sans-serif !important;
+}
+
 .innerNavBar {
   padding: 25px;
   display: flex;
@@ -49,10 +54,21 @@
 .appBar {
   background: transparent;
   background-color: transparent;
-  transition: background-color 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   position: fixed;
 }
 
 .appBar.active {
-  background-color: #0a6769;
+  /* background-color: #0a6769; */
+  background-color: #000;
+}
+@media screen and (width > 640px) and (width <= 768px) {
+  .navButton {
+    font-size: 20px !important;
+  }
+}
+@media screen and (width > 768px) and (width <= 1024px) {
+  .navButton {
+    font-size: 20px !important;
+  }
 }

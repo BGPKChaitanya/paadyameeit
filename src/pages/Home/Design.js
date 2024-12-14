@@ -1,16 +1,63 @@
-import React from "react";
-import "./Design.css";
-import { Box, Divider, Typography } from "@mui/material";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
+// import {  useMotionValueEvent, useScroll } from "framer-motion";
+import { Box, Typography } from "@mui/material";
 import understand from "../../ProjectImages/understand.png";
 import design from "../../ProjectImages/design.png";
 import code from "../../ProjectImages/code.png";
 import development from "../../ProjectImages/development.png";
 import interaction from "../../ProjectImages/interaction.png";
 import DESIGNText from "../../Config/Design";
+import "./Design.css";
+
+import fadeIn from "../Varients";
 
 const Design = () => {
+  const ref = useRef(null);
+
+  // const { scrollYProgress } = useScroll({
+  //   target: ref,
+  //   offset: ["start end", "end end"],
+  // });
+  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  //   console.log("Page scroll: ", latest);
+  // });
+
+  const imagePlate = (img, dir) => {
+    return (
+      <motion.img
+        variants={fadeIn(dir, 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        style={{ height: "100%" }}
+        // component="img"
+        src={img}
+      ></motion.img>
+    );
+  };
+
+  const namePlate = (title, des, dir) => {
+    return (
+      <motion.Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+        variants={fadeIn(dir, 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+      >
+        <Typography className="txt1 txt12">{title}</Typography>
+        <Typography className="txt2 txt12">{des}</Typography>
+      </motion.Box>
+    );
+  };
+
   return (
-    <Box className="desCon">
+    <Box className="desCon" ref={ref}>
       <Box
         sx={{
           padding: { xs: "none", sm: "none", lg: "50px 135px 25px 135px" },
@@ -19,10 +66,30 @@ const Design = () => {
           alignItems: "center",
         }}
       >
-        <Typography className="desTitle1">Way of Building</Typography>
-        <Typography className="desTitle">Great Software</Typography>
-        <Divider
-          sx={{
+        <motion.Typography
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="desTitle1"
+        >
+          Way of Building
+        </motion.Typography>
+        <motion.Typography
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="desTitle"
+        >
+          Great Software
+        </motion.Typography>
+        <motion.hr
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          style={{
             width: "100px",
             border: "2px solid #e68d39",
             borderRadius: "20px",
@@ -32,19 +99,15 @@ const Design = () => {
       </Box>
       <Box className="destextCon">
         <Box className="destext">
-          <Box sx={{ height: "100%" }} component="img" src={understand}></Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
-            <Typography className="txt1">
-              {DESIGNText.UNDERSTAND_TITLE}
-            </Typography>
-            <Typography className="txt2">{DESIGNText.UNDERSTAND}</Typography>
-          </Box>
+          {imagePlate(understand, "left")}
+
+          {namePlate(
+            DESIGNText.UNDERSTAND_TITLE,
+            DESIGNText.UNDERSTAND,
+            "right"
+          )}
+
+          {/* Visible in mobile */}
           <Box
             sx={{
               height: "100%",
@@ -56,25 +119,14 @@ const Design = () => {
                 xl: "none",
               },
             }}
-            component="img"
-            src={design}
-          ></Box>
+            className="anime"
+          >
+            {imagePlate(design, "right")}
+          </Box>
+          {namePlate(DESIGNText.DESIGN_TITLE, DESIGNText.DESIGN, "left")}
 
           <Box
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
-            <Typography className="txt1 txt12">
-              {DESIGNText.DESIGN_TITLE}
-            </Typography>
-            <Typography className="txt2 txt12">{DESIGNText.DESIGN}</Typography>
-          </Box>
-          {/* <Box sx={{ border: "5px solid red" }}></Box> */}
-          <Box
-            sx={{
               height: "100%",
               display: {
                 xs: "none",
@@ -84,22 +136,13 @@ const Design = () => {
                 xl: "block",
               },
             }}
-            component="img"
-            src={design}
-          ></Box>
-          <Box sx={{ height: "100%" }} component="img" src={code}></Box>
-          {/* <Box sx={{ border: "5px solid red" }}></Box>
-          <Box sx={{ border: "5px solid red" }}></Box> */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
           >
-            <Typography className="txt1">{DESIGNText.CODE_TITLE}</Typography>
-            <Typography className="txt2">{DESIGNText.CODE}</Typography>
+            {imagePlate(design, "right")}
           </Box>
+          <Box sx={{ height: "100%" }}>{imagePlate(code, "left")}</Box>
+
+          {namePlate(DESIGNText.CODE_TITLE, DESIGNText.CODE, "right")}
+
           <Box
             sx={{
               height: "100%",
@@ -111,23 +154,15 @@ const Design = () => {
                 xl: "none",
               },
             }}
-            component="img"
-            src={development}
-          ></Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
           >
-            <Typography className="txt1 txt12">
-              {DESIGNText.DEPLOYMENT_TITLE}
-            </Typography>
-            <Typography className="txt2 txt12">
-              {DESIGNText.DEPLOYMENT}
-            </Typography>
+            {imagePlate(development, "right")}
           </Box>
+          {namePlate(
+            DESIGNText.DEPLOYMENT_TITLE,
+            DESIGNText.DEPLOYMENT,
+            "left"
+          )}
+
           <Box
             sx={{
               height: "100%",
@@ -139,20 +174,11 @@ const Design = () => {
                 xl: "block",
               },
             }}
-            component="img"
-            src={development}
-          ></Box>
-          <Box sx={{ height: "100%" }} component="img" src={interaction}></Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
           >
-            <Typography className="txt1">{DESIGNText.USERS_TITLE}</Typography>
-            <Typography className="txt2">{DESIGNText.USERS}</Typography>
+            {imagePlate(development, "right")}
           </Box>
+          <Box sx={{ height: "100%" }}>{imagePlate(interaction, "left")}</Box>
+          {namePlate(DESIGNText.USERS_TITLE, DESIGNText.USERS, "right")}
         </Box>
       </Box>
     </Box>

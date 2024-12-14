@@ -5,9 +5,17 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import logo from "../../ProjectImages/logo.png";
 
 const Footer = () => {
-  const navItems = ["Home", "About", "Services", "Career", "Contact"];
+  const navItems = [
+    "Home",
+    "About",
+    "History",
+    "Services",
+    "Career",
+    "Contact",
+  ];
 
   const date = new Date();
   let year = date.getFullYear();
@@ -31,14 +39,14 @@ const Footer = () => {
             <Link to="/">
               <Box
                 component="img"
-                src="https://ik.imagekit.io/p0ykayweu/download__1_-removebg-preview.png?updatedAt=1724746158404"
+                src={logo}
                 sx={{
-                  height: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
-                  width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
+                  height: { xs: "45px", sm: "45px", md: "45px", lg: "60px" },
+                  // width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
                 }}
               ></Box>
             </Link>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <Typography
                 variant="h4"
                 sx={{
@@ -46,13 +54,13 @@ const Footer = () => {
                   marginLeft: "10px",
                   fontWeight: "bold",
                   color: "#fff",
-                  fontSize: { xs: "15px", sm: "15px", md: "15px", lg: "30px" },
+                  fontSize: { xs: "15px", sm: "15px", md: "15px", lg: "25px" },
                   textDecoration: "none",
                 }}
               >
                 Paadyamee IT Solutions Pvt Ltd
               </Typography>
-            </Link>
+            </Link> */}
           </Box>
           <Box className="iconContainer">
             <Typography
@@ -69,9 +77,24 @@ const Footer = () => {
             >
               <LinkedInIcon sx={{ color: "#fff" }} />
             </Link>
-            <YouTubeIcon sx={{ color: "#fff" }} />
-            <InstagramIcon sx={{ color: "#fff" }} />
-            <FacebookIcon sx={{ color: "#fff" }} />
+            <Link
+              href="https://www.youtube.com/@PaadyameeITSolutionsPvtLtd19"
+              target="_blank"
+            >
+              <YouTubeIcon sx={{ color: "#fff" }} />
+            </Link>
+            <Link
+              href="https://www.instagram.com/paadyamee_it/?igsh=bTBsbGpkemxkOTI1"
+              target="_blank"
+            >
+              <InstagramIcon sx={{ color: "#fff" }} />
+            </Link>
+            {/* <Link
+              href="https://in.linkedin.com/company/paadyamee-it-solutions"
+              target="_blank"
+            >
+              <FacebookIcon sx={{ color: "#fff" }} />
+            </Link> */}
           </Box>
         </Box>
         <Box className="footerContents">
@@ -91,7 +114,7 @@ const Footer = () => {
               }}
             >
               <Link
-                href={item === "Home" ? "/" : `/${item}`}
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 underline="none"
                 sx={{ color: "#fff" }}
               >

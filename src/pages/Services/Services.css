@@ -1,29 +1,407 @@
 .SerBox {
-  background-color: #031c12;
+  background-image: url("../../ProjectImages/services.jpg");
+  background-size: cover;
 }
-.conT2 {
-  /* height: 100vh; */
+.conT22 {
   background-color: rgba(43, 42, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.conTss {
+  background-color: #fff;
+  padding: 30px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.conTs {
+.serviceTitle {
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 50px !important;
+  color: #fff;
+  margin-top: 150px !important;
+
+  text-shadow: 0px 0px 20px rgba(252, 61, 3, 0.5);
+}
+.serviceTitle1 {
+  text-align: center !important;
+  margin-bottom: 50px !important;
+  font-size: 24px !important;
+  color: #fff;
+}
+.serCont {
+  padding: 20px;
+  border: 2px solid #a69c92 !important;
+  border-radius: 15px !important;
+  margin: 20px !important;
+  width: 400px;
+  /* background: linear-gradient(to right, #914f10, #fff, #247839); */
+  /* background-color: #247839; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px #a19f9d;
+  transition: all 0.5s ease-in-out 0s !important;
+}
+.serCont:hover {
+  transform: scale(1.1);
+}
+.img1 {
+  border: 2px solid #000 !important;
+}
+.img {
+  height: 200px;
+}
+.serContent {
+  font-weight: bold !important;
+  margin-top: 15px !important;
+  text-align: center;
+}
+.serContent1 {
+  font-size: 18px !important;
+  text-align: center;
+}
+.UIDitems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.UID1 {
+  /* height: 200px; */
+  width: 300px;
+  margin: 10px;
+  /* border: 2px solid grey; */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+.UIDCont {
   background-color: #fff;
-  border-radius: 25px;
-  padding: 30px;
-  margin-top: 150px;
-  margin-bottom: 50px;
-  box-shadow: 0px 0px 20px rgba(252, 61, 3, 0.5);
+  /* padding: 30px; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.textH {
-  text-align: center !important;
+.UI1 {
   font-weight: bold !important;
-  font-size: 50px !important;
-  color: #142842;
-  text-shadow: 0px 0px 20px rgba(252, 61, 3, 0.5);
+  font-size: 24px !important;
+  text-align: center;
+  margin: 10px;
+  margin-top: 20px !important;
+}
+.UI2 {
+  /* font-weight: bold !important; */
+  text-align: center;
+  margin: 10px;
+  font-size: 18px !important;
+}
+.sdcont1 {
+  display: grid;
+  grid-template-rows: 300px 300px 300px 300px;
+  grid-template-columns: 500px 500px;
+  row-gap: 75px;
+  column-gap: 30px;
+  margin: 20px;
+  margin-top: 50px;
+}
+.imgCont {
+  height: 100%;
+}
+.SDS1 {
+  font-weight: bold !important;
+  font-size: 24px !important;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.SDS2 {
+  font-size: 18px !important;
+}
+
+.SDSitem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.sdAlignCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sdsright {
+  text-align: right !important;
+}
+.teckStack {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.techStacktitle {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+.teckItem {
+  height: 75px;
+  padding: 10px;
+  margin: 20px;
+}
+.divider {
+  border: 2px solid orange !important;
+  width: 100px;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  border-radius: 5px !important;
+}
+.sdAlignCont2 {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+@media screen and (width > 640px) and (width <= 768px) {
+  .conTss {
+    padding: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .serCont {
+    width: 250px;
+    height: 200px;
+    margin: 10px !important;
+  }
+  .img {
+    height: 120px;
+  }
+  .serviceTitle1 {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    font-size: 18px !important;
+    color: #fff;
+  }
+  .serviceTitle {
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 28px !important;
+    color: #fff;
+    margin-top: 75px !important;
+  }
+  .UI1 {
+    font-size: 20px !important;
+  }
+  .UI2 {
+    font-size: 15px !important;
+  }
+  .UID1 {
+    width: 350px;
+  }
+  .serContent1 {
+    padding: 10px;
+    font-size: 15px !important;
+    text-align: center;
+  }
+  .sdcont1 {
+    display: grid;
+    grid-template-rows: 200px 50px 200px 50px 200px 50px 200px 50px;
+    grid-template-columns: 700px;
+    margin: 10px;
+  }
+  .SDS1 {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center !important;
+  }
+  .SDS2 {
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+
+  .SDSitem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sdAlignCont1 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .sdAlignCont2 {
+    display: none !important;
+  }
+  .techStacktitle {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (width > 475px) and (width <= 640px) {
+  .serCont {
+    width: 90vw;
+    height: 200px;
+    margin: 10px !important;
+  }
+  .img {
+    height: 120px;
+  }
+  .serviceTitle1 {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    font-size: 18px !important;
+    color: #fff;
+  }
+  .serviceTitle {
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 28px !important;
+    color: #fff;
+    margin-top: 75px !important;
+  }
+  .UI1 {
+    font-size: 20px !important;
+  }
+  .UI2 {
+    font-size: 15px !important;
+  }
+  .UID1 {
+    width: 350px;
+  }
+  .serContent1 {
+    padding: 10px;
+    font-size: 15px !important;
+    text-align: center;
+  }
+  .sdcont1 {
+    display: grid;
+    grid-template-rows: 200px 150px 200px 150px 200px 150px 200px 150px;
+    grid-template-columns: 320px;
+    margin: 10px;
+  }
+  .SDS1 {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center !important;
+  }
+  .SDS2 {
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+
+  .SDSitem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sdAlignCont1 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .sdAlignCont2 {
+    display: none !important;
+  }
+  .techStacktitle {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (width <= 475px) {
+  .serCont {
+    width: 90vw;
+    height: 200px;
+    margin: 10px !important;
+  }
+  .img {
+    height: 150px;
+  }
+  .serviceTitle1 {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    font-size: 18px !important;
+    color: #fff;
+  }
+  .serviceTitle {
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 28px !important;
+    color: #fff;
+    margin-top: 75px !important;
+  }
+  .UI1 {
+    font-size: 20px !important;
+  }
+  .UI2 {
+    font-size: 15px !important;
+  }
+  .UID1 {
+    width: 350px;
+  }
+  .serContent1 {
+    padding: 10px;
+    font-size: 15px !important;
+    text-align: center;
+  }
+  .sdcont1 {
+    display: grid;
+    grid-template-rows: 200px 150px 200px 150px 200px 150px 200px 150px;
+    grid-template-columns: 320px;
+    margin: 10px;
+  }
+  .SDS1 {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center !important;
+  }
+  .SDS2 {
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+
+  .SDSitem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sdAlignCont1 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .techStacktitle {
+    margin-top: 30px !important;
+  }
+  .sdAlignCont2 {
+    display: none !important;
+  }
 }
