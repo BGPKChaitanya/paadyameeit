@@ -34,8 +34,9 @@ const drawerWidth = 240;
 const navItems = ["Home", "About", "Services", "Projects", "Career", "Contact"];
 
 function Header(props) {
-  // const { window } = props;
+  // const { window } = props
   const navigate = useNavigate();
+  const path = window.location.pathname;
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [navBar, setnavBar] = useState(false);
@@ -122,18 +123,18 @@ function Header(props) {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography
-                    onClick={() => drawernavigateTo("Services")}
+                    onClick={() => drawernavigateTo("technologies")}
                     sx={{ textAlign: "left", paddingLeft: "15px" }}
                   >
-                    UID Services
+                    Technologies
                   </Typography>
                 </AccordionDetails>
                 <AccordionDetails>
                   <Typography
-                    onClick={() => drawernavigateTo("Services")}
+                    onClick={() => drawernavigateTo("uid")}
                     sx={{ textAlign: "left", paddingLeft: "15px" }}
                   >
-                    Software Development
+                    Aadhar Services
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -168,9 +169,10 @@ function Header(props) {
         component="nav"
         // className={navBar ? "appBar active" : "appBar"}
         sx={{
-          padding: { sx: "none", lg: "15px 100px 15px 100px" },
-          backgroundColor: navBar ? "#058037" : "#058037",
+          padding: { sx: "none", lg: "0px 100px 0px 100px" },
+          backgroundColor: navBar ? "#e4e6eb" : "transparent",
           position: "fixed",
+          height: { sx: "none", lg: "80px" },
           top: 0,
         }}
       >
@@ -186,29 +188,26 @@ function Header(props) {
           >
             <Link to="/">
               <Box
-                component="img"
-                src={logo}
                 sx={{
-                  height: { xs: "45px", sm: "45px", md: "45px", lg: "60px" },
-                  // border: "1px solid red",
-                  // width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
-                }}
-              ></Box>
-            </Link>
-            {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-              <Typography
-                variant="h4"
-                sx={{
-                  my: 2,
-                  marginLeft: "10px",
-                  fontWeight: "bold",
-                  fontSize: { xs: "24px", sm: "24px", md: "24px", lg: "30px" },
-                  textDecoration: "none",
+                  height: "80px",
+                  border: "2px solid #058037",
+                  backgroundColor: "#058037",
+                  padding: "10px",
                 }}
               >
-                PAADYAMEE
-              </Typography>
-            </Link> */}
+                <Box
+                  component="img"
+                  src={logo}
+                  sx={{
+                    height: { xs: "45px", sm: "45px", md: "45px", lg: "60px" },
+                    // height: "80px",
+                    backgroundColor: "#058037",
+                    // border: "1px solid red",
+                    // width: { xs: "24px", sm: "24px", md: "24px", lg: "50px" },
+                  }}
+                ></Box>
+              </Box>
+            </Link>
           </Box>
 
           <IconButton
@@ -216,7 +215,11 @@ function Header(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{
+              mr: 2,
+              display: { sm: "none" },
+              color: navBar ? "#058037" : path === "/" ? "#058037" : "#ffffff",
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -230,22 +233,16 @@ function Header(props) {
               }}
             >
               {navItems.map((item) => (
-                // <Link
-                //   key={item}
-                //   to={
-                //     item === "Home"
-                //       ? "/"
-                //       : item === "About" || item === "Services"
-                //       ? ""
-                //       : `/${item.toLowerCase()}`
-                //   }
-                // >
                 <Box>
                   <Button
                     key={item}
                     className="navButton"
                     sx={{
-                      color: "#FFFFFF",
+                      color: navBar
+                        ? "#058037"
+                        : path === "/"
+                        ? "#058037"
+                        : "#ffffff",
                       textTransform: "none",
                       fontSize: "23px",
                       width: { md: "100px", lg: "150px" },
@@ -305,11 +302,11 @@ function Header(props) {
                       onClose={handlesClose}
                       TransitionComponent={Fade}
                     >
-                      <MenuItem onClick={() => navigateTo("services")}>
-                        UID Services
+                      <MenuItem onClick={() => navigateTo("technologies")}>
+                        Technologies
                       </MenuItem>
-                      <MenuItem onClick={() => navigateTo("services")}>
-                        Software Development
+                      <MenuItem onClick={() => navigateTo("uid")}>
+                        Aadhar Services
                       </MenuItem>
                     </Menu>
                   ) : (

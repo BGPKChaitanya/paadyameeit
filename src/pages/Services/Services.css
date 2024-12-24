@@ -66,6 +66,7 @@
 .serContent1 {
   font-size: 18px !important;
   text-align: center;
+  margin-bottom: 20px;
 }
 .UIDitems {
   display: flex;
@@ -112,6 +113,15 @@
 .sdcont1 {
   display: grid;
   grid-template-rows: 300px 300px 300px 300px;
+  grid-template-columns: 500px 500px;
+  row-gap: 75px;
+  column-gap: 30px;
+  margin: 20px;
+  margin-top: 50px;
+}
+.sdcont2 {
+  display: grid;
+  grid-template-rows: 300px 300px 300px;
   grid-template-columns: 500px 500px;
   row-gap: 75px;
   column-gap: 30px;
@@ -176,6 +186,26 @@
   justify-content: center !important;
   align-items: center !important;
 }
+@media screen and (width > 768px) and (width <= 1200px) {
+  .sdcont1 {
+    display: grid;
+    grid-template-rows: 300px 300px 300px 300px;
+    grid-template-columns: 425px 425px;
+    row-gap: 75px;
+    column-gap: 30px;
+    margin: 20px;
+    margin-top: 50px;
+  }
+  .sdcont2 {
+    display: grid;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 425px 425px;
+    row-gap: 75px;
+    column-gap: 30px;
+    margin: 20px;
+    margin-top: 50px;
+  }
+}
 @media screen and (width > 640px) and (width <= 768px) {
   .conTss {
     padding: 10px !important;
@@ -218,10 +248,17 @@
     padding: 10px;
     font-size: 15px !important;
     text-align: center;
+    margin-bottom: 20px;
   }
   .sdcont1 {
     display: grid;
     grid-template-rows: 200px 50px 200px 50px 200px 50px 200px 50px;
+    grid-template-columns: 700px;
+    margin: 10px;
+  }
+  .sdcont2 {
+    display: grid;
+    grid-template-rows: 200px 50px 200px 50px 200px 50px;
     grid-template-columns: 700px;
     margin: 10px;
   }
@@ -292,10 +329,17 @@
     padding: 10px;
     font-size: 15px !important;
     text-align: center;
+    margin-bottom: 20px;
   }
   .sdcont1 {
     display: grid;
     grid-template-rows: 200px 150px 200px 150px 200px 150px 200px 150px;
+    grid-template-columns: 320px;
+    margin: 10px;
+  }
+  .sdcont2 {
+    display: grid;
+    grid-template-rows: 200px 150px 200px 150px 200px 150px;
     grid-template-columns: 320px;
     margin: 10px;
   }
@@ -366,10 +410,17 @@
     padding: 10px;
     font-size: 15px !important;
     text-align: center;
+    margin-bottom: 20px;
   }
   .sdcont1 {
     display: grid;
     grid-template-rows: 200px 150px 200px 150px 200px 150px 200px 150px;
+    grid-template-columns: 320px;
+    margin: 10px;
+  }
+  .sdcont2 {
+    display: grid;
+    grid-template-rows: 200px 150px 200px 150px 200px 150px;
     grid-template-columns: 320px;
     margin: 10px;
   }

@@ -37,7 +37,7 @@ const Design = () => {
     );
   };
 
-  const namePlate = (title, des, dir) => {
+  const namePlate = (title, des, dir, txtali) => {
     return (
       <motion.Box
         sx={{
@@ -50,8 +50,22 @@ const Design = () => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
       >
-        <Typography className="txt1 txt12">{title}</Typography>
-        <Typography className="txt2 txt12">{des}</Typography>
+        <Typography
+          className="txt1"
+          sx={{
+            textAlign: { xs: "center", sx: "center", md: txtali, lg: txtali },
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          className="txt2"
+          sx={{
+            textAlign: { xs: "center", sx: "center", md: txtali, lg: txtali },
+          }}
+        >
+          {des}
+        </Typography>
       </motion.Box>
     );
   };
@@ -104,7 +118,8 @@ const Design = () => {
           {namePlate(
             DESIGNText.UNDERSTAND_TITLE,
             DESIGNText.UNDERSTAND,
-            "right"
+            "right",
+            "left"
           )}
 
           {/* Visible in mobile */}
@@ -123,7 +138,12 @@ const Design = () => {
           >
             {imagePlate(design, "right")}
           </Box>
-          {namePlate(DESIGNText.DESIGN_TITLE, DESIGNText.DESIGN, "left")}
+          {namePlate(
+            DESIGNText.DESIGN_TITLE,
+            DESIGNText.DESIGN,
+            "left",
+            "right"
+          )}
 
           <Box
             sx={{
@@ -141,7 +161,7 @@ const Design = () => {
           </Box>
           <Box sx={{ height: "100%" }}>{imagePlate(code, "left")}</Box>
 
-          {namePlate(DESIGNText.CODE_TITLE, DESIGNText.CODE, "right")}
+          {namePlate(DESIGNText.CODE_TITLE, DESIGNText.CODE, "right", "left")}
 
           <Box
             sx={{
@@ -160,7 +180,8 @@ const Design = () => {
           {namePlate(
             DESIGNText.DEPLOYMENT_TITLE,
             DESIGNText.DEPLOYMENT,
-            "left"
+            "left",
+            "right"
           )}
 
           <Box
@@ -178,7 +199,7 @@ const Design = () => {
             {imagePlate(development, "right")}
           </Box>
           <Box sx={{ height: "100%" }}>{imagePlate(interaction, "left")}</Box>
-          {namePlate(DESIGNText.USERS_TITLE, DESIGNText.USERS, "right")}
+          {namePlate(DESIGNText.USERS_TITLE, DESIGNText.USERS, "right", "left")}
         </Box>
       </Box>
     </Box>

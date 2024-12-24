@@ -1,4 +1,5 @@
 import "./Home.css";
+import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
@@ -26,51 +27,62 @@ const Home = () => {
               padding: { sx: "none", lg: "25px 135px 25px 135px" },
             }}
           >
-            <motion.Box
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "70vh",
+              }}
             >
-              <Typography className="hometitle">
-                Empower Your <span className="htitle1">Ideas</span> with {""}
-              </Typography>
-              <Typography className="hometitle htitle2">
-                <Typewriter
-                  words={[
-                    "Technology",
-                    "Team work",
-                    "Expertise",
-                    "Creativity",
-                    "Innovation",
-                  ]}
-                  loop={false}
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </Typography>
-              <Typography className="titledes">
-                Our expert team brings your ideas to life with precision and
-                impact, ensuring that every project is executed with the highest
-                level of skill and care.
-              </Typography>
-            </motion.Box>
-            <motion.Button
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              onClick={handleClick}
-              className="requestButton"
-            >
-              Request a demo
-            </motion.Button>
+              <motion.Box
+                variants={fadeIn("up", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+              >
+                <Typography className="hometitle">
+                  Empower Your <span className="htitle1">Ideas</span> with {""}
+                </Typography>
+                <Typography className="hometitle htitle2">
+                  <Typewriter
+                    words={[
+                      "Technology",
+                      "Team work",
+                      "Expertise",
+                      "Creativity",
+                      "Innovation",
+                    ]}
+                    loop={false}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+                </Typography>
+                <Typography className="titledes">
+                  Our expert team brings your ideas to life with precision and
+                  impact, ensuring that every project is executed with the
+                  highest level of skill and care.
+                </Typography>
+              </motion.Box>
+              <motion.Button
+                variants={fadeIn("up", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                onClick={handleClick}
+                className="requestButton"
+              >
+                Request a demo
+              </motion.Button>
+            </Box>
+            <Partners />
           </Box>
         </Box>
-        <Partners />
+        {/* <Partners /> */}
         <Design />
       </Box>
     </Suspense>

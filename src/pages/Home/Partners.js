@@ -5,20 +5,37 @@ import re from "../../ProjectImages/re.png";
 import vi from "../../ProjectImages/vi.png";
 import BNR from "../../ProjectImages/BNR.png";
 import bs from "../../ProjectImages/bs.png";
-import mars from "../../ProjectImages/mars.png";
+import mars from "../../ProjectImages/4.png";
+import intellimart from "../../ProjectImages/1.png";
+import snr from "../../ProjectImages/2.png";
+import secure from "../../ProjectImages/3.png";
+import prime from "../../ProjectImages/5.webp";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import Slick from "./Slick";
 
-const partnerList = [re, vi, BNR, bs, mars];
+const partnerList = [mars, vi, snr, prime, BNR, secure, bs, re];
 
 const Partners = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
   return (
     <Box
       className="Partner"
-      sx={{
-        padding: { xs: "none", sm: "none", lg: "50px 135px 25px 135px" },
-      }}
+      // sx={{
+      //   padding: { xs: "none", sm: "none", lg: "50px 135px 25px 135px" },
+      // }}
     >
       <Box className="parTitle">
-        <Typography className="desTitle1">Our Partners</Typography>
+        <Typography sx={{ textAlign: "center", fontSize: "25px" }}>
+          Our Partners
+        </Typography>
         <Divider
           sx={{
             width: "100px",
@@ -29,13 +46,7 @@ const Partners = () => {
         />
       </Box>
 
-      <Box className="parlist">
-        {partnerList.map((item) => (
-          <Box className="partItem">
-            <Box component="img" src={item} sx={{ width: "100px" }}></Box>
-          </Box>
-        ))}
-      </Box>
+      <Slick />
     </Box>
   );
 };

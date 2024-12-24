@@ -1,21 +1,18 @@
 .homeContainer {
   height: 100vh;
-  background-image: url("/public/bulb.jpg");
+  background-image: url("/public/bg4.jpg");
   background-size: cover;
-  position: relative;
+  /* position: relative; */
 }
 
 .homeInnerContainer {
   height: 100%;
   width: 100%;
-  background-color: rgba(1, 31, 17, 0.6);
+  /* background-color: rgba(1, 31, 17, 0.6); */
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
+
+  color: #072614;
   font-weight: bold;
   font-family: "roboto";
 }
@@ -30,19 +27,23 @@
   font-size: 50px !important;
 }
 .htitle2 {
-  color: #27dfe6;
+  /* color: #27dfe6; */
+  color: #e66327;
 }
 .htitle1 {
-  color: #fcba03;
+  /* color: #fcba03; */
+  color: #de8004;
 }
 .requestButton {
   border-radius: 10px !important;
+  border: 0px !important;
   width: 200px !important;
   height: 50px !important;
   margin-top: 50px !important;
   color: white !important;
   font-weight: bold !important;
   background-color: #3b71ca !important;
+  cursor: pointer;
 }
 .titledes {
   font-size: 20px !important;

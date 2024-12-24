@@ -80,8 +80,8 @@ const Contact = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <section className="conBox">
-        <Box className="conT2">
+      <section className="contactBox">
+        <Box className="conTact2">
           <Typography className="contactus">Get in Touch</Typography>
           <Box className="conTssx">
             <Box className="cont1">
