@@ -18,7 +18,7 @@ const UID = () => {
     <Suspense fallback={<Loading />}>
       <Box className="SerBox">
         <Box className="conT22">
-          <Typography className="serviceTitle">Aadhar Services</Typography>
+          <Typography className="serviceTitle">Aadhaar Services</Typography>
           <Typography className="serviceTitle1">
             We proudly offer our services nationwide, reaching every corner of
             India.

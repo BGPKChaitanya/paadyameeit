@@ -134,7 +134,7 @@ function Header(props) {
                     onClick={() => drawernavigateTo("uid")}
                     sx={{ textAlign: "left", paddingLeft: "15px" }}
                   >
-                    Aadhar Services
+                    Aadhaar Services
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -306,7 +306,7 @@ function Header(props) {
                         Technologies
                       </MenuItem>
                       <MenuItem onClick={() => navigateTo("uid")}>
-                        Aadhar Services
+                        Aadhaar Services
                       </MenuItem>
                     </Menu>
                   ) : (

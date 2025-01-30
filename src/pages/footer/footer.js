@@ -12,7 +12,9 @@ const Footer = () => {
     "Home",
     "About",
     "History",
-    "Services",
+    "Technologies",
+    "Aadhaar Services",
+    "Projects",
     "Career",
     "Contact",
   ];
@@ -110,11 +112,23 @@ const Footer = () => {
                   lg: "16px",
                 },
                 textDecoration: "none",
+                textAlign: {
+                  xs: "center",
+                  sm: "center",
+                  md: "left",
+                  lg: "left",
+                },
                 cursor: "pointer",
               }}
             >
               <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                href={
+                  item === "Home"
+                    ? "/"
+                    : item === "Aadhaar Services"
+                    ? "/uid"
+                    : `/${item.toLowerCase()}`
+                }
                 underline="none"
                 sx={{ color: "#fff" }}
               >

@@ -205,7 +205,7 @@ const Contact = () => {
               />
               <Typography sx={{ textAlign: "center" }}>
                 <span style={{ fontWeight: "Bold" }}>Registered Office: </span>
-                {ContactUsText.Address2}
+                {ContactUsText.Address}
               </Typography>
             </Box>
             <Box className="addBox">
@@ -214,7 +214,7 @@ const Contact = () => {
               />
               <Typography sx={{ textAlign: "center" }}>
                 <span style={{ fontWeight: "Bold" }}>Branch Office: </span>
-                {ContactUsText.Address}
+                {ContactUsText.Address2}
               </Typography>
             </Box>
           </Box>

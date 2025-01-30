@@ -7,13 +7,9 @@ import { ClassNames } from "@emotion/react";
 const History = () => {
   const items = [
     {
-      title: "2016",
-      cardTitle: "Started as Excel IT Solutions Pvt Ltd",
-    },
-    {
       title: "2019",
       cardTitle:
-        "Incorporation of Paadyamee IT Solutions Pvt Ltd - Aadhar Services",
+        "Incorporation of Paadyamee IT Solutions Pvt Ltd - Aadhaar Services",
 
       // cardSubtitle:
       //   "Men of the British Expeditionary Force (BEF) wade out to..",

@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@mui/material";
 
-const partnerList = [mars, vi, snr, prime, BNR, secure, bs, re];
+const partnerList = [mars, vi, snr, prime, BNR];
 
 const Slick = () => {
   var settings = {

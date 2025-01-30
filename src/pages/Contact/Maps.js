@@ -23,14 +23,14 @@ const Maps = () => {
 
   const position = [
     {
-      name: "Registered Office",
+      name: "Branch Office",
       location: [17.46297, 78.47467],
-      Address: ContactUsText.Address,
+      Address: ContactUsText.Address2,
     },
     {
-      name: "Branch Office",
+      name: "Registered Office",
       location: [16.47872, 80.69845],
-      Address: ContactUsText.Address2,
+      Address: ContactUsText.Address,
     },
   ];
 
