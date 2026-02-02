@@ -14,12 +14,15 @@ import Loading from "../Loading/Loading";
 import cad from "../../ProjectImages/techstack/AutoCAD-logo.png";
 import Staad from "../../ProjectImages/techstack/staad-pro-logo.png";
 import etabs from "../../ProjectImages/techstack/etabs.png";
+import revit from "../../ProjectImages/techstack/revit.png";
+import safe from "../../ProjectImages/techstack/safe.png";
+import sketchup from "../../ProjectImages/techstack/sketchup.png";
 import Struct from "../../ProjectImages/CDSImages/StructAnalysis.jpeg";
 
 import "./Services.css";
 
 const CDS = () => {
-  const techStack = [cad, Staad, etabs];
+  const techStack = [cad, Staad, etabs, safe, revit, sketchup];
   return (
     <Suspense fallback={<Loading />}>
       <Box className="SerBox1">
