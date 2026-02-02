@@ -2,6 +2,10 @@
   background-image: url("../../ProjectImages/services.jpg");
   background-size: cover;
 }
+.SerBox1 {
+  background-image: url("../../ProjectImages/cds.jpeg");
+  background-size: cover;
+}
 .conT22 {
   background-color: rgba(43, 42, 42, 0.9);
   display: flex;
@@ -68,6 +72,11 @@
   text-align: center;
   margin-bottom: 20px;
 }
+.serContent2 {
+  font-size: 18px !important;
+  text-align: justify;
+  margin-bottom: 20px;
+}
 .UIDitems {
   display: flex;
   flex-direction: row;
@@ -131,6 +140,12 @@
 .imgCont {
   height: 100%;
 }
+.imgCont1 {
+  height: 500px;
+  width: 500px;
+  margin: 20px;
+  border-radius: 30px;
+}
 .SDS1 {
   font-weight: bold !important;
   font-size: 24px !important;
@@ -173,6 +188,11 @@
   padding: 10px;
   margin: 20px;
 }
+.CDSItem {
+  height: 50px;
+  padding: 10px;
+  margin: 20px;
+}
 .divider {
   border: 2px solid orange !important;
   width: 100px;
@@ -186,7 +206,36 @@
   justify-content: center !important;
   align-items: center !important;
 }
+.cdscont1 {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.cdsConta1 {
+}
+.cdsConta2 {
+  display: none;
+}
 @media screen and (width > 768px) and (width <= 1200px) {
+  .imgCont1 {
+    height: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 30px;
+  }
+  .cdsConta1 {
+    display: none;
+  }
+  .cdsConta2 {
+    display: flex;
+  }
+  .cdscont1 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
   .sdcont1 {
     display: grid;
     grid-template-rows: 300px 300px 300px 300px;
@@ -207,6 +256,27 @@
   }
 }
 @media screen and (width > 640px) and (width <= 768px) {
+  .imgCont1 {
+    height: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 30px;
+  }
+  .cdsConta1 {
+    display: none;
+  }
+  .cdsConta2 {
+    display: flex;
+  }
+  .serContent2 {
+    margin: 20px;
+  }
+  .cdscont1 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
   .conTss {
     padding: 10px !important;
     display: flex !important;
@@ -295,6 +365,27 @@
   }
 }
 @media screen and (width > 475px) and (width <= 640px) {
+  .imgCont1 {
+    height: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 30px;
+  }
+  .cdsConta1 {
+    display: none;
+  }
+  .cdsConta2 {
+    display: flex;
+  }
+  .serContent2 {
+    margin: 20px;
+  }
+  .cdscont1 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
   .serCont {
     width: 90vw;
     height: 200px;
@@ -376,6 +467,27 @@
   }
 }
 @media screen and (width <= 475px) {
+  .imgCont1 {
+    height: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 30px;
+  }
+  .cdsConta1 {
+    display: none;
+  }
+  .cdsConta2 {
+    display: flex;
+  }
+  .serContent2 {
+    margin: 20px;
+  }
+  .cdscont1 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
   .serCont {
     width: 90vw;
     height: 200px;

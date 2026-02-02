@@ -15,6 +15,7 @@ const Career = lazy(() => import("./pages/Career/Career"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 const History = lazy(() => import("./pages/History/History"));
 const UID = lazy(() => import("./pages/Services/UID"));
+const CDS = lazy(() => import("./pages/Services/CDS"));
 const Technologies = lazy(() => import("./pages/Services/Softwareservices"));
 const Projects = lazy(() => import("./pages/Projects/projects"));
 const Projectsitem = lazy(() => import("./pages/Projects/projectitem"));
@@ -34,6 +35,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/history" element={<History />} />
           <Route path="/uid" element={<UID />} />
+          <Route path="/construction-design-services" element={<CDS />} />
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<Projectsitem />} />

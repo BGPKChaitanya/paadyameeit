@@ -1,0 +1,9 @@
+const CDSText = {
+  CDSdes1:
+    "Paadyamee IT Solution delivers comprehensive, end-to-end construction design services that combine engineering precision with the power of modern digital technologies. We support projects at every stage — from initial concept development and feasibility planning to detailed execution drawings and construction-ready documentation. Our multidisciplinary expertise spans architectural design, structural engineering, MEP (mechanical, electrical, and plumbing) system planning, interior space optimization, site layout design, advanced 3D visualization, and accurate quantity estimation. This integrated approach ensures that every element of a project is carefully coordinated, reducing design conflicts and improving overall project efficiency.",
+  CDSdes2:
+    "Our design philosophy goes beyond aesthetics. We focus on creating spaces that are visually compelling, structurally durable, functionally efficient, and economically viable. Each design is developed with strict adherence to engineering standards, safety regulations, and local building codes, ensuring long-term reliability and performance. By considering factors such as sustainability, material efficiency, and future scalability, we help clients achieve smarter and more responsible construction outcomes.",
+  CDSdes3:
+    "Leveraging advanced software tools, digital modeling, and streamlined workflows, Paadyamee IT Solution enhances accuracy, minimizes errors, and enables clear project visualization before construction begins. Our coordinated design process helps clients reduce risks, control costs, and optimize resource utilization. Whether for residential, commercial, industrial, or infrastructure projects, we provide the technical clarity and design confidence needed to move smoothly from planning to successful project execution.",
+};
+export default CDSText;

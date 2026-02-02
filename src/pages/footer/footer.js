@@ -14,6 +14,7 @@ const Footer = () => {
     "History",
     "Technologies",
     "Aadhaar Services",
+    "Construction Design Services",
     "Projects",
     "Career",
     "Contact",
@@ -21,6 +22,22 @@ const Footer = () => {
 
   const date = new Date();
   let year = date.getFullYear();
+
+  const routeMap = {
+  Home: "/",
+  "Aadhaar Services": "/uid",
+};
+
+const getHref = (item) => {
+  if (routeMap[item]) return routeMap[item];
+
+  // Fallback: convert label → URL slug
+  return `/${item
+    .toLowerCase()
+    .replace(/\s+/g, "-")      // spaces → dashes
+    .replace(/[^a-z0-9-]/g, "")}`; // remove weird chars
+};
+
 
   return (
     <Box
@@ -121,7 +138,7 @@ const Footer = () => {
                 cursor: "pointer",
               }}
             >
-              <Link
+              {/* <Link
                 href={
                   item === "Home"
                     ? "/"
@@ -133,7 +150,14 @@ const Footer = () => {
                 sx={{ color: "#fff" }}
               >
                 {item}
-              </Link>
+              </Link> */}
+              <Link
+  href={getHref(item)}
+  underline="none"
+  sx={{ color: "#fff" }}
+>
+  {item}
+</Link>
             </Typography>
           ))}
         </Box>

@@ -137,6 +137,14 @@ function Header(props) {
                     Aadhaar Services
                   </Typography>
                 </AccordionDetails>
+                <AccordionDetails>
+                  <Typography
+                    onClick={() => drawernavigateTo("construction-design-services")}
+                    sx={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    Constructions Design Services
+                  </Typography>
+                </AccordionDetails>
               </Accordion>
             )
           ) : (
@@ -307,6 +315,9 @@ function Header(props) {
                       </MenuItem>
                       <MenuItem onClick={() => navigateTo("uid")}>
                         Aadhaar Services
+                      </MenuItem>
+                      <MenuItem onClick={() => navigateTo("construction-design-services")}>
+                        Construction Design Services
                       </MenuItem>
                     </Menu>
                   ) : (
