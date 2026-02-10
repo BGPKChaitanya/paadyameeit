@@ -11,6 +11,7 @@ import snr from "../../ProjectImages/2.png";
 import ap from "../../ProjectImages/aplogo1.png";
 import adani from "../../ProjectImages/adani.png";
 import secure from "../../ProjectImages/3-1.png";
+import bank from "../../ProjectImages/bank.png";
 import prime from "../../ProjectImages/5.webp";
 
 import "./Partners.css";
@@ -18,7 +19,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@mui/material";
 
-const partnerList = [ap, mars, vi, snr, prime, BNR, adani];
+const partnerList = [ap, bank, mars, vi, snr, prime, BNR, adani];
 
 const Slick = () => {
   var settings = {

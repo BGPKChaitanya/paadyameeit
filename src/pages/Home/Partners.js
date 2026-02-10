@@ -10,13 +10,14 @@ import intellimart from "../../ProjectImages/1.png";
 import snr from "../../ProjectImages/2.png";
 import secure from "../../ProjectImages/3.png";
 import prime from "../../ProjectImages/5.webp";
+import bank from "../../ProjectImages/bank.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Slick from "./Slick";
 
-const partnerList = [ mars, vi, snr, prime, BNR, secure, bs, re];
+const partnerList = [mars, vi, snr, prime, BNR, secure, bs, re, bank];
 
 const Partners = () => {
   var settings = {

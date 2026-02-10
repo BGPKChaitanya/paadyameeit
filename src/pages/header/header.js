@@ -139,7 +139,9 @@ function Header(props) {
                 </AccordionDetails>
                 <AccordionDetails>
                   <Typography
-                    onClick={() => drawernavigateTo("construction-design-services")}
+                    onClick={() =>
+                      drawernavigateTo("structural-design-services")
+                    }
                     sx={{ textAlign: "left", paddingLeft: "15px" }}
                   >
                     Constructions Design Services
@@ -164,7 +166,7 @@ function Header(props) {
                 </Link>
               </ListItemButton>
             </ListItem>
-          )
+          ),
         )}
       </List>
     </Box>
@@ -249,8 +251,8 @@ function Header(props) {
                       color: navBar
                         ? "#058037"
                         : path === "/"
-                        ? "#058037"
-                        : "#ffffff",
+                          ? "#058037"
+                          : "#ffffff",
                       textTransform: "none",
                       fontSize: "23px",
                       width: { md: "100px", lg: "150px" },
@@ -260,8 +262,8 @@ function Header(props) {
                       item === "About"
                         ? handleClick
                         : item === "Services"
-                        ? handlesClick
-                        : () => navigateTo(item)
+                          ? handlesClick
+                          : () => navigateTo(item)
                     }
                   >
                     {item}
@@ -316,8 +318,10 @@ function Header(props) {
                       <MenuItem onClick={() => navigateTo("uid")}>
                         Aadhaar Services
                       </MenuItem>
-                      <MenuItem onClick={() => navigateTo("construction-design-services")}>
-                        Construction Design Services
+                      <MenuItem
+                        onClick={() => navigateTo("structural-design-services")}
+                      >
+                        Structural Design Services
                       </MenuItem>
                     </Menu>
                   ) : (

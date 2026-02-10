@@ -14,7 +14,7 @@ const Footer = () => {
     "History",
     "Technologies",
     "Aadhaar Services",
-    "Construction Design Services",
+    "Structural Design Services",
     "Projects",
     "Career",
     "Contact",
@@ -24,20 +24,19 @@ const Footer = () => {
   let year = date.getFullYear();
 
   const routeMap = {
-  Home: "/",
-  "Aadhaar Services": "/uid",
-};
+    Home: "/",
+    "Aadhaar Services": "/uid",
+  };
 
-const getHref = (item) => {
-  if (routeMap[item]) return routeMap[item];
+  const getHref = (item) => {
+    if (routeMap[item]) return routeMap[item];
 
-  // Fallback: convert label → URL slug
-  return `/${item
-    .toLowerCase()
-    .replace(/\s+/g, "-")      // spaces → dashes
-    .replace(/[^a-z0-9-]/g, "")}`; // remove weird chars
-};
-
+    // Fallback: convert label → URL slug
+    return `/${item
+      .toLowerCase()
+      .replace(/\s+/g, "-") // spaces → dashes
+      .replace(/[^a-z0-9-]/g, "")}`; // remove weird chars
+  };
 
   return (
     <Box
@@ -152,12 +151,12 @@ const getHref = (item) => {
                 {item}
               </Link> */}
               <Link
-  href={getHref(item)}
-  underline="none"
-  sx={{ color: "#fff" }}
->
-  {item}
-</Link>
+                href={getHref(item)}
+                underline="none"
+                sx={{ color: "#fff" }}
+              >
+                {item}
+              </Link>
             </Typography>
           ))}
         </Box>

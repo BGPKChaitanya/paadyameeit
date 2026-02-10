@@ -28,7 +28,7 @@ const CDS = () => {
       <Box className="SerBox1">
         <Box className="conT22">
           <Typography className="serviceTitle">
-            Construction Design Services
+            Structural Design Services
           </Typography>
           <Typography className="serviceTitle1">
             Designing Structures. Defining Futures.
